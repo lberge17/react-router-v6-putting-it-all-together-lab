@@ -62,7 +62,7 @@ describe('🎬 Movie Directory App - Vitest Suite', () => {
   it('navigates to MovieForm at "/directors/1/movies/new"', async () => {
     window.history.pushState({}, '', '/directors/1/movies/new')
     render(<App />)
-    expect(await screen.findByText(/Add New Movie/i)).toBeInTheDocument()
+    expect(await screen.findAllByText(/Add New Movie/i) == 2)
   })
 
   it('renders MovieCard details correctly', async () => {
